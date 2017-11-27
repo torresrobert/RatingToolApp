@@ -26,8 +26,22 @@ struct Theatres{
 
 var merchants_walk = Theatres(Name: "Merchants Walk",Rating: 20,Address:"1301 Johnson Ferry Rd Marietta, GA  30068 United States", NumOfRatings: 2,varname: "merchants_walk",latitude: 33.977916,longitude: -84.427445, messages: ["Comfy seats, friendly staff, good prices, high quality sound system and screens.","Great people, great location, great experience!","Good food, good movies, and good service.",""])
 var amc_theatres = Theatres(Name: "AMC Theatres",Rating: 40,Address:"3101 Cobb Pkwy Atlanta, GA  30339 United States", NumOfRatings: 10,varname: "amc_theatres",latitude: 33.879080 ,longitude: -84.456397, messages: ["Comfy seats, friendly staff, good prices, high quality sound system and screens.","Great people, great location, great experience!","Good food, good movies, and good service.",""])
-var regal_cinemas = Theatres(Name: "Regal Cinemas",Rating: -20,Address:"3950 1st St Alpharetta, GA  30009 United States", NumOfRatings: 3,varname: "regal_cinemas",latitude: 34.071921,longitude: -84.276280, messages: ["Comfy seats, friendly staff, good prices, high quality sound system and screens.","Great people, great location, great experience!","Good food, good movies, and good service.",""])
-var ncg_cinema = Theatres(Name: "NCG Cinemas",Rating: -30,Address:"1050 Powder Springs Rd SW Marietta, GA  30064 United States", NumOfRatings: 8,varname: "ncg_cinema",latitude: 33.927641,longitude: -84.572033, messages: ["Comfy seats, friendly staff, good prices, high quality sound system and screens.","Great people, great location, great experience!","Good food, good movies, and good service.",""])
+var regal_cinemas = Theatres(Name: "Regal Cinemas",Rating: -20,Address:"3950 1st St Alpharetta, GA  30009 United States", NumOfRatings: 3,varname: "regal_cinemas",latitude: 34.071921,longitude: -84.276280, messages: ["The menu, burgers are good, but Nachos done with potato chips?","The theater is beautiful.  That said, the problem is the staff. ","They do need some cleaning in the bathrooms, but the seats inside of the theater are cozy and spacious",""])
+var ncg_cinema = Theatres(Name: "NCG Cinemas",Rating: -30,Address:"1050 Powder Springs Rd SW Marietta, GA  30064 United States", NumOfRatings: 8,varname: "ncg_cinema",latitude: 33.927641,longitude: -84.572033, messages: ["Could be a bit cheaper on their food and drinks but I love this place.","Seats recline and there is plenty of room for people to walk in the aisles.","It's never packed, has reclining seats, free popcorn refills, super clean",""])
+
+
+struct Coffee{
+    var Name = ""
+    var Rating = 0
+    var Address = ""
+    var NumOfRatings = 0
+    var varname = ""
+    var latitude = 0.0
+    var longitude = 0.0
+    var messages = ["","","",""]
+}
+
+var cool_beans = Coffee(Name: "Cool Beans",Rating: 40,Address:"31 Mill St, Marietta, GA 30060 United States", NumOfRatings: 8,varname: "cool_beans",latitude: 33.953265,longitude: -84.550748, messages: ["Excellent selection of drinks and the staff were pleasant and knowledgable","They have great prices, and their coffee blows Starbucks' out of the water!","Good bean options if you want to bring some home with you at a decent price",""])
 
 let geoCoder = CLGeocoder()
 
@@ -218,6 +232,8 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
             
         }else if (theatres[myTheatIndex]==(amc_theatres.varname)){
             CurrentLoc.text = amc_theatres.Name
+            ImageOfCurrLoc.image = UIImage(named: amc_theatres.varname)
+            RatingNum.text = String(amc_theatres.Rating)
             
             //avgerage rating/////////
             if (amc_theatres.Rating<0){
@@ -230,6 +246,8 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
             
         }else if (theatres[myTheatIndex]==(regal_cinemas.varname)){
             CurrentLoc.text = regal_cinemas.Name
+            ImageOfCurrLoc.image = UIImage(named: regal_cinemas.varname)
+            RatingNum.text = String(regal_cinemas.Rating)
             
             //avgerage rating/////////
             if (regal_cinemas.Rating<0){
@@ -242,6 +260,8 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
             
         }else if (theatres[myTheatIndex]==(ncg_cinema.varname)){
             CurrentLoc.text = ncg_cinema.Name
+            ImageOfCurrLoc.image = UIImage(named: ncg_cinema.varname)
+            RatingNum.text = String(ncg_cinema.Rating)
             
             
             //avgerage rating/////////
