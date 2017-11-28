@@ -154,8 +154,8 @@
 		7F871A071FC35848002C30CF /* Trending */ = {
 			isa = PBXGroup;
 			children = (
-				7F41BC531FC4F3CE00202717 /* TrendingFavoriteViewController.swift */,
 				7F871A051FC3575E002C30CF /* Trending_Theatres.swift */,
+				7F41BC531FC4F3CE00202717 /* TrendingFavoriteViewController.swift */,
 				7FE96ADD1FCC4B740080A11E /* Trending.swift */,
 				7F871A081FC35899002C30CF /* Trending_Coffee.swift */,
 				7F871A0A1FC358AB002C30CF /* Trending_Restaurants.swift */,

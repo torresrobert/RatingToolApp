@@ -8,8 +8,8 @@
 
 import UIKit
 
-var pets = ["Bella","Jason","Emory"]
-var message = ["Hey, it was good seeing you today.","I just saw your last post and totally agree.","No way!"]
+var pets = ["Bella","Jason","Emory", "Kelly W", "Armando C", "Ryan G", "Alli", "Aaron", "Gabe"]
+var message = ["Hey, it was good seeing you today.","I just saw your last post and totally agree.","No way!","How about later, around 10pm?", "See you then!", "Let's go to our usual spot."]
 var myIndex = 0
 
 class TableViewController: UITableViewController {

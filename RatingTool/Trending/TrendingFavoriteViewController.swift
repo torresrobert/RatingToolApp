@@ -241,6 +241,31 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
             }else{
                 AvgRating.image = UIImage(named: "Like Icon")
             }
+            
+            let geocoder = CLGeocoder()
+            let address = amc_theatres.Address
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                if((error) != nil){
+                    print("Error", error ?? "")
+                }
+                if let placemark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    // print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                    
+                    let annotation = MKPointAnnotation()
+                    let centerCoordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude:coordinates.longitude)
+                    annotation.coordinate = centerCoordinate
+                    annotation.title = merchants_walk.Name
+                    self.MapOfCurrLoc.addAnnotation(annotation)
+                    let span = MKCoordinateSpanMake(0.1, 0.1)
+                    let region = MKCoordinateRegionMake(centerCoordinate, span)
+                    self.MapOfCurrLoc.region = region
+                    
+                    
+                    
+                    
+                }
+            })
             ////////////////////////
             
             
@@ -255,6 +280,31 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
             }else{
                 AvgRating.image = UIImage(named: "Like Icon")
             }
+            
+            let geocoder = CLGeocoder()
+            let address = regal_cinemas.Address
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                if((error) != nil){
+                    print("Error", error ?? "")
+                }
+                if let placemark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    // print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                    
+                    let annotation = MKPointAnnotation()
+                    let centerCoordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude:coordinates.longitude)
+                    annotation.coordinate = centerCoordinate
+                    annotation.title = merchants_walk.Name
+                    self.MapOfCurrLoc.addAnnotation(annotation)
+                    let span = MKCoordinateSpanMake(0.1, 0.1)
+                    let region = MKCoordinateRegionMake(centerCoordinate, span)
+                    self.MapOfCurrLoc.region = region
+                    
+                    
+                    
+                    
+                }
+            })
             ////////////////////////
             
             
@@ -271,7 +321,30 @@ class TrendingFavoriteViewController: UIViewController, UITableViewDelegate, UIT
                 AvgRating.image = UIImage(named: "Like Icon")
             }
             ////////////////////////
-            
+            let geocoder = CLGeocoder()
+            let address = ncg_cinema.Address
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                if((error) != nil){
+                    print("Error", error ?? "")
+                }
+                if let placemark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                    // print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                    
+                    let annotation = MKPointAnnotation()
+                    let centerCoordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude:coordinates.longitude)
+                    annotation.coordinate = centerCoordinate
+                    annotation.title = merchants_walk.Name
+                    self.MapOfCurrLoc.addAnnotation(annotation)
+                    let span = MKCoordinateSpanMake(0.1, 0.1)
+                    let region = MKCoordinateRegionMake(centerCoordinate, span)
+                    self.MapOfCurrLoc.region = region
+                    
+                    
+                    
+                    
+                }
+            })
             
             
             
